@@ -151,7 +151,7 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface) pb.Response {
 // ========================================
 func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 	function, args := stub.GetFunctionAndParameters()
-	fmt.Println("invoke is running " + function)
+	fmt.Println("invoke is run" + function)
 
 	// Handle different functions
 	if function == "initCert" { // Save a given certificate
