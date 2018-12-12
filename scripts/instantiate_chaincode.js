@@ -42,7 +42,7 @@ function createCert(enrollErr, enrollResp){
 	logger.info('Lets try invoke');
 	console.log('---------------------------------------');
 
-	var certString = JSON.stringify(fs.readFileSync('test.json'));
+	var certString = (fs.readFileSync('test.json'));
 
 	var opts2 = {
 		chaincode_id: chaincode_id,

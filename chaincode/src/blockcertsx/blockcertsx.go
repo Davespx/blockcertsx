@@ -58,21 +58,10 @@ type VerificationObj struct {
 	verType		string `json:"type"` // TODO string array
 }
 
-
-
-
-
-
-
-
 type cert struct {
 	Name       string 		`json:"certName"`    //the fieldtags are needed to keep case from bouncing around
 	certBytes  Blockcertx `json:"certJSON"` //docType is used to distinguish the various types of objects in state database
 }
-
-
-
-
 
 // ===================================================================================
 // Main
@@ -134,8 +123,8 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface) pb.Response {
 	fmt.Println("  GetStringArgs() args count:", len(alt))
 	fmt.Println("  GetStringArgs() args found:", alt)
 
-	// store compatible marbles application version
-	err = stub.PutState("marbles_ui", []byte("4.0.1"))
+
+	err = stub.PutState("cert", []byte("12"))
 	if err != nil {
 		return shim.Error(err.Error())
 	}
@@ -151,7 +140,7 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface) pb.Response {
 // ========================================
 func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 	function, args := stub.GetFunctionAndParameters()
-	fmt.Println("invoke is run" + function)
+	fmt.Println("invoke is running " + function)
 
 	// Handle different functions
 	if function == "initCert" { // Save a given certificate
@@ -167,7 +156,7 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 }
 
 // ============================================================
-// initMarble - create a new marble, store into chaincode state
+// initCert - create a new Certificate, store into chaincode state
 // ============================================================
 func (t *SimpleChaincode) initCert(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 	var err error
@@ -188,7 +177,7 @@ func (t *SimpleChaincode) initCert(stub shim.ChaincodeStubInterface, args []stri
 	}
 
 	certName := args[0]
-	//certString := args[1]
+	certString := args[1]
 
 
 	// ==== Create cert object and marshal to JSON ====
@@ -206,7 +195,7 @@ func (t *SimpleChaincode) initCert(stub shim.ChaincodeStubInterface, args []stri
 	//marbleJSONasBytes := []byte(str)
 
 	// === Save cert to state ===
-	err = stub.PutState(certName, []byte("TEST_STRING"))
+	err = stub.PutState(certName, []byte(certString))
 	if err != nil {
 		return shim.Error(err.Error())
 	}

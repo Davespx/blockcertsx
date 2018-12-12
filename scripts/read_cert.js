@@ -15,7 +15,7 @@ var logger = new (winston.Logger)({
 // --- Set Details Here --- //
 var config_file = 'marbles_local.json';							//set config file name
 var chaincode_id = 'blockcertsx';									//use same ID during the INSTALL proposal
-var chaincode_ver = 'v2';										//use same version during the INSTALL proposal
+var chaincode_ver = 'v1';										//use same version during the INSTALL proposal
 
 //  --- Use (optional) arguments if passed in --- //
 var args = process.argv.slice(2);
@@ -57,7 +57,11 @@ fcw.enrollWithAdminCert(cp.makeEnrollmentOptionsUsingCert(), function (enrollErr
 		};
 
 		fcw.query_chaincode(enrollResp , opts3, function (err, resp) {
-			console.log(resp);
+			fs.writeFile('../downloads/response.json', JSON.stringify(resp.parsed), function (err, resp){
+				console.log('Writing File');
+
+
+			});
 			console.log('---------------------------------------');
 			logger.info('Invoke Read Cert done. Errors:', (!err) ? 'nope' : err);
 			console.log('---------------------------------------');
