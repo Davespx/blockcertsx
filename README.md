@@ -38,9 +38,9 @@ In order to first run the demo we must download an up to date version of the [fa
 
   5. At this point all of the docker containers should have been created and are running. Notice that this includes the chaincode container for the fabcar example provided by **fabric-samples**. To see the containers simply run:
 
-  `docker ps`
+      `docker ps`
 
-  from any directory.
+      from any directory.
 
 ### Running BlockcertsX
 
@@ -56,7 +56,7 @@ In order to first run the demo we must download an up to date version of the [fa
     - instantiate the chaincode and to run an invoke
     - method that will save the certificate test.json into the network.
 
-    `node instantiate_chaincode.js`
+      `node instantiate_chaincode.js`
 
   4. run the read certificate script to retrieve the certificate from state and save it into the downloads folder.
 
