@@ -20,13 +20,13 @@ In order to first run the demo we must download an up to date version of the [fa
   1. Open a Terminal
   2. First let's clean up to make sure that previous runs of this demo or any other examples using Hyperledger Fabric don't interfere.
 
-    `cd fabric-samples/basic-network`
+      `cd fabric-samples/basic-network`
 
-    `sudo ./teardown.sh`
+      `sudo ./teardown.sh`
 
   3. Go to fabric-samples/fabcar directory:
 
-    `cd fabric-sample/fabcar`
+      `cd fabric-sample/fabcar`
 
   4. run the following scripts in order:
 
@@ -63,5 +63,3 @@ In order to first run the demo we must download an up to date version of the [fa
       `node read_cert.js`
 
   5. At this point the certificate should have been retrieved from the blockchain state.
-
-  
