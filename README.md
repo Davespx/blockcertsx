@@ -1,7 +1,7 @@
 
 
 
-# Blockcertsx
+# BlockcertsX
 
 BlockcertsX is a small proof-of-concept research project based off [Blockcerts](https://www.blockcerts.org/about.html). The issuance of digital certificates and other important documents using the blockchain is not something completely new. Organizations such as Open Certificates and Blockcerts already have accomplished this mission successfully.
 
@@ -29,7 +29,7 @@ The implementation of this project is heavily based on [**blockcerts**](https://
 
 # Running the Demo
 
-In order to first run the demo, we must download an up to date version of the [fabric-samples]('https://github.com/hyperledger/fabric-samples') repository. We'll leverage the provided sample networks in which we will piggyback the blockcertsX application.
+In order to first run the demo, we must download an up to date version of the [fabric-samples]('https://github.com/hyperledger/fabric-samples') repository. We'll leverage the provided sample networks in which we will piggyback the BlockcertsX application.
 
 ## Setting up the Hyperledger Fabric network.
 
